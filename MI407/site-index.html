@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+	<head>
+	<title>Index of Class Work</title>
+	<meta name="author" value="Lucas Kushner">
+	<link rel="stylesheet" href="main.css">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="main.js"></script>
+	<script type="text/javascript">
+		
+	$(document).ready(function()
+	{
+		$("div.table-section h2").click(function() {
+			$(this).parent().children("table").each(function() {
+				$(this).fadeToggle("slow", "linear");
+			});
+		});
+		
+		$("select#color").change(function() {			
+			var val = $(this).val();
+			updateColor(val);
+		});
+		
+		initColor();
+		if (localStorage["color"])
+        {
+			$("select#color").val(localStorage["color"]);
+        }
+		else
+		{
+			$("select#color").val("black");
+		}
+	});
+	</script>
+	<style>
+	div.table-section
+	{
+		margin-bottom: 30px;
+	}
+	div#mods
+	{
+		float: left;
+		margin-left: 50px;
+	}
+	</style>
+	</head>
+	
+	<body>
+
+	<div class="center-wrap">
+	<div id="header">
+		<h1>Index of work for &quot;Programming for the Web&quot;</h1>
+	</div>
+	<div id="navbar">
+	<ul>
+		<li class="selected"><a href="site-index.html">Home</a></li>
+		<li><a href="site-assignments.html">Assignments</a></li>
+		<li><a href="site-registration.html">Register</a></li>
+	</ul>
+	</div>
+	<div id="content">
+		<h2>Introduction</h2>
+		<p>
+		This page will serve as an index of the html work done in this class, giving an easy place to look through work produced thus far. The contents and layout of this page are likely to change.
+		<br>
+		However, until that time, please, <em>enjoy!</em>
+		</p>
+		
+		<div class="table-section">
+		<h2>Resources</h2>
+		<table id="resources">
+			<tr><td><a href="http://www.w3schools.com">W3Schools</a></td></tr>
+			<tr><td><a href="http://www.github.com">GitHub</a></td></tr>
+			<tr><td><a href="http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml#General_Style_Rules">Google Style Guidelines</a></td></tr>
+			<tr><td><a href="http://www.jsfiddle.net">JSFiddle</a></td></tr>
+			<tr><td><a href="http://thecodeplayer.com/">The Code Player</a></td></tr>
+		</table>
+		</div>
+		
+		<div id="mods">
+		<h2>Site Modifications</h2>
+		<h3>Color</h3>
+		<select id="color">
+			<option value="black">Black</option>
+			<option value="red">Red</option>			
+			<option value="orange">Orange</option>			
+			<option value="yellow">Yellow</option>
+			<option value="green">Green</option>
+			<option value="blue">Blue</option>
+			<option value="purple">Purple</option>
+			<option value="pink">Pink</option>
+		</select>
+		</div>
+		
+		<h2>Further Information</h2>
+		For general searches for more information, please try one of the following:
+		<ul>
+			<li>Search for it on Google</li>
+			<li>Ask somebody nearby who may know</li>
+			<li>If all else fails, plost a forum entry and see what response you get</li>
+		</ul>
+	</div>
+	
+	<div id="canvas-wrap">
+		<canvas id="canvas">
+		<script src="particles/particles.js"></script>
+	</div>
+	</div>
+	
+	</body>
+</html>

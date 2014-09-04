@@ -1,0 +1,95 @@
+        Values, Variables, and State
+
+What do we need to be able to do with variables in order to interpret
+a Jay program?  We must be able to declare variables, initialize them,
+and assign other values to them as the program runs.  This requires
+keeping track of their state as the program runs.  Let's consider
+each of these, starting with keeping track of state.
+
+Variable Bindings
+
+State can be seen as a mapping from variable names to addresses to values:
+    VariableNames -> Addresses -> Values
+For our Jay interpreter, however, we are simplifying this to just represent
+state as a mapping (or "binding") between variable names and values.
+    VariableNames -> Values
+Thus we can represent state as a list of tuples.  One way of doing this
+(attempt 1 of 3) would be:
+    type VarBinding = (String, Integer)
+    type State = [ VarBinding ]
+
+Not all variables are Integers, though, so we want to create a data type
+that will encompass both integer and boolean values.  This requires two
+constructors, one for each type, giving us our second (but not yet
+final) attempt at representing variable bindings:
+    type VariableName = String
+    data ValidValue = IntValue Integer | BoolValue Bool
+    type VarBinding = (VariableName, ValidValue)
+We could, for example, represent a binding from a variable called
+myVar to the integer value 3 as:
+    (myVar, IntValue 3)
+
+Declarations
+
+Consider providing the ability to declare a single variable.
+(You can extend this to multi-variable declarations such as
+"int i, j, k" later.)  We might create Declaration
+and DeclList types like the following:
+    data JayType = JayInt | JayBool
+    data Declaration = Decl JayType String
+    data DeclList = Declarations [ Declaration ]
+
+  [Aside:
+    Note that JayType, with its two parameterless constructors, is not
+    the same as ValidValue.  JayType represents a type name (keyword) in a
+    variable declaration -- either JayInt or JayBool -- whereas IntValue and
+    BoolValue are Haskell constructors that specify the run-time type of a
+    value.  For example, in the following table, JayInt represents the "int"
+    keyword in a variable declaration, whereas IntValue specifies that the
+    number 3 is an integer value, "wrapping up" the number in a type that can
+    be assigned to a variable.
+        Jay syntax              Intermediate Representation
+        ----------              ---------------------------
+        int aVariable;          Decl JayInt aVariable
+        aVariable = 3;          Assign aVariable IntValue 3
+  ]
+
+Variable declarations in Jay do not include initialization, so when
+variables are first added to the state they do not have a valid value
+bound to them.  This means we have to expand our range of possibilities
+for a variable binding to include a representation for uninitialized
+variables.  We could just add Uninitialized as a third (parameterless)
+constructor for ValidValue, except that it's only valid when first
+declaring variables -- it is not a valid value for assignment.
+Therefore, we need to distinguish between the valid values for
+assignment (Assignable) and the broader range of valid values in a
+binding (ValidValue).  Our third and final set of definitions is:
+
+    module ValuesAndState(ValidValue(IntValue, BoolValue),
+                          AssignableValue(UnInitialized, Assignable),
+                          VariableName, State,
+                          interpretAsInt, interpretAsBool, ... )
+    where
+
+    import TestSuiteSupportModule
+
+    data ValidValue = IntValue Integer | BoolValue Bool
+                      deriving (Eq, Ord, Show)
+
+    data AssignableValue = UnInitialized | Assignable ValidValue
+
+    type VariableName = String
+
+    type VarBinding = (VariableName, AssignableValue)
+
+    type State = [ VarBinding ]
+
+    instance Show AssignableValue where
+         show UnInitialized = "**uninitialized**"
+         show (Assignable v) = show v
+
+    instance Eq AssignableValue where
+         UnInitialized == UnInitialized = True
+         (Assignable v1) == (Assignable v2) = v1 == v2
+         v1 == v2 = False
+

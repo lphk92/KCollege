@@ -1,0 +1,12 @@
+#here is a simple makefile
+all: sort.o sort_main.o
+	gcc -g sort.o sort_main.o -o selectSort
+
+sort_main.o: sort_main.c
+	gcc -c -g sort_main.c
+
+sort.o: sort.c sort.h
+	gcc -c -g sort.c 
+
+clean: 
+	rm -rf *.o selectSort

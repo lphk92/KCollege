@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript</title>
+		<style>
+		div
+		{
+			padding: 0px 0px 10px 10px;
+			margin: 5px;
+			border: 2px solid black;
+			border-radius: 1px;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="intro"></div>
+		
+		<div id="fortune">
+			<h3>Fortune Telling</h3>
+			Enter a number to have your fortune told!
+			<input type="number" id="fortuneNum">
+			<button id="fortuneSubmit">See My Fortune</button> <br>
+			<span id="fortuneResult"></span>
+		</div>
+		
+		<script>
+		//Initialize the document
+		document.getElementById("intro").innerHTML = "This page will show different behaviors using JavaScript. By the way, this message was written in a script.";
+		document.write("<p id='javaPara'>This entire paragraph block was added using javascript</p>");
+
+		document.getElementById("fortuneSubmit").onclick = tellFortune;
+		
+		function tellFortune()
+		{
+			var num = document.getElementById("fortuneNum").value;
+			var fortune = num % 7;
+			var result = document.getElementById("fortuneResult");
+			
+			switch(fortune)
+			{
+				case 1: result.innerHTML = "It is going to be a FANTASTIC day!";
+					break;
+				case 2: result.innerHTML = "Stay sharp! Otherwise there is a high chance of you running into a tree";
+					break;
+				case 3: result.innerHTML = "Don't worry, it will turn out okay";
+					break;
+				case 4: result.innerHTML = "Ooo.....you may just want to go back to bed and call it a day...";
+					break;
+				default: result.innerHTML = "You may or may not have an experience of questionable significance";
+			}
+		}
+		
+		</script>
+	</body>
+</html>

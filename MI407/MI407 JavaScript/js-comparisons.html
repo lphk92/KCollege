@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript</title>
+		<style>
+		div
+		{
+			padding: 0px 0px 10px 10px;
+			margin: 5px;
+			border: 2px solid black;
+			border-radius: 1px;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="intro"></div>
+		
+		<div id="guesser">
+			I am thinking of a number between 1 and 10. <br>
+			Go ahead, take a guess:
+			<input type="number" id="guessNum"></input>
+			<button id="guess">Guess</button> <br>
+			<span id="guessResult"></span>
+		</div>
+		
+		<script>
+		//Initialize the document
+		document.getElementById("intro").innerHTML = "This page will show different behaviors using JavaScript. By the way, this message was written in a script.";
+		document.write("<p id='javaPara'>This entire paragraph block was added using javascript</p>");
+		
+		document.getElementById("guess").onclick = makeGuess;
+		var num = Math.floor((Math.random() * 10) + 1);
+		
+		function makeGuess()
+		{
+			var guess = document.getElementById("guessNum").value;
+			document.getElementById("guessResult").innerHTML = guess == num ? "Congratulations! You got it right!" : "Nope, " + guess.toString() + " isn't right. Try Again!"
+		}
+
+		</script>
+	</body>
+</html>

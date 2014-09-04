@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript</title>
+		<style>
+		div
+		{
+			padding: 0px 0px 10px 10px;
+			margin: 5px;
+			border: 2px solid black;
+			border-radius: 1px;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="intro"></div>
+		
+		<div id="calculator">
+			<h3>Calculator</h3>
+			Number 1: <input type="text" id="num1"></input><br>
+			Number 2: <input type="text" id="num2"></input><br>
+			Output: <span id="numOutput"></span><br>
+			<button id="calc">Calculate</button>
+		</div>
+		
+		
+		<div id="stringAnalyzer">
+			<h3>String Analayzer</h3>
+			<textarea id="text"></textarea>
+			<button id="analyze">Analyze</button>
+		</div>
+		
+		<div id="game">
+			<h3>Game</h3>
+			<p id="gameInfo"></p>
+			<button id="gameAction">Sure! I've got nothing better to do.</button>
+		</div>
+		
+		<script>
+		//Initialize the document
+		document.getElementById("intro").innerHTML = "This page will show different behaviors using JavaScript. By the way, this message was written in a script.";
+		document.write("<p id='javaPara'>This entire paragraph block was added using javascript</p>");
+		
+		document.getElementById("calc").onclick = add;
+		document.getElementById("analyze").onclick = analyze;
+		
+		function clear()
+		{
+			document.write("Information has been cleared!");
+		}
+		function add()
+		{
+			var num1 = parseInt(document.getElementById("num1").value);
+			var num2 = parseInt(document.getElementById("num2").value);
+			document.getElementById("numOutput").innerHTML = num1 + num2;
+		}
+		function analyze()
+		{
+			var string = document.getElementById("text").value.trim();
+			var length = string.length;
+			var words = string.split(" ").length;
+			
+			alert("The text that you entered: \n" + string + "\n\n" +
+				  "Contains " + length + " characters, and " + words + " words.");
+		}
+		</script>
+	
+		<script id="gameScript">
+		//Initialize game
+		var mage = new Object();
+		mage.name = "Sylvanti";
+		mage.age = 274;
+		mage.quest = "Slay the Dragon";
+		mage.spells = ["Fire", "Ice", "Lightning", "Wind", "Earth"];
+		mage.introduce = function() { return "Greetings traveler! I am the mage known as " + this.name + ", and in my " + this.age + " years in this land I have partaken in the making of countless legends! Currently, I seek to " + this.quest +". Will you join me?"; };
+		
+		var gameInfo = document.getElementById("gameInfo");
+		gameInfo.innerHTML = mage.introduce();
+		
+		var gameAction = document.getElementById("gameAction"); 
+		gameAction.onclick = updateGame;
+		
+		var state = "start"
+		
+		function getRandomSpell()
+		{
+			return mage.spells[Math.floor(Math.random() * mage.spells.length)];
+		}
+		
+		function updateGame()
+		{
+			if (state=="start")
+			{
+				gameInfo.innerHTML = "You and Sylvanti set out on your quest. Your first stop: the nearby town of Affendor. Here you plan to stock up on supplies, as you head toward the Mountain of the Northern Wind, where the dragon awaits.";
+				gameAction.innerHTML = "Onward to Affendor!";
+				state = "toAffen";
+			}
+			else if (state=="toAffen")
+			{
+				gameInfo.innerHTML = "Walking along the sceneic forest path to Affendor, you begin to notice a rustling in the bushes ahead. You turn to look, and then suddenly are struck from behind!";
+				gameAction.innerHTML = "Fight back!";
+				state = "firstFight";
+			}
+			else if (state=="firstFight")
+			{
+				gameInfo.innerHTML = "You take a swing at the perpetrator: a theif of the forest clan. He easily dodges, and you fall flat to the ground. Best to not overestimate yourself...";
+				gameAction.innerHTML = "...alrigt " + mage.name + ", your turn";
+				state = "mageFight";
+			}
+			else if (state=="mageFight")
+			{
+				gameInfo.innerHTML = mage.name + " calmly faces your opponent, and with the power of his " + getRandomSpell() + " magic! The spell strikes down the your foe.";
+				gameAction.innerHTML = "Nice shot " + mage.name + "! Onward we go!"
+				state = "fightEnd";
+			}
+		}
+		
+		</script>
+	</body>
+</html>

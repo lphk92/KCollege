@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript</title>
+	</head>
+	<style>
+	input
+	{
+		display: block;
+	}
+	</style>
+	<body>
+			
+		<script>
+		function validate()
+		{		
+			var user = document.forms["registration"]["username"].value;
+			var pass1 = document.forms["registration"]["password"].value;
+			var pass2 = document.forms["registration"]["confirmPassword"].value;
+			
+			if (user == "" || user == null)
+			{
+				alert("You must enter a username");
+			}
+			else if (pass1 != pass2)
+			{
+				alert("Your passwords were not the same. Please try again");
+			}
+		}		
+		</script>
+		
+		<form name="registration" onsubmit="return validate()" method="post">
+		<label>Username</label><input type="text" name="username" id="username">
+		<label>Password</label><input type="password" name="password" id="password">
+		<label>Confirm Password</label><input type="password" name="confirmPassword" id="confirmPassword">
+		<input type="submit" value="Submit">
+		</form>
+
+	</body>
+</html>

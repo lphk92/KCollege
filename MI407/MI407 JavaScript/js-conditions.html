@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript</title>
+		<style>
+		div
+		{
+			padding: 0px 0px 10px 10px;
+			margin: 5px;
+			border: 2px solid black;
+			border-radius: 1px;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="intro"></div>
+		
+		<div id="game">
+			<h3>Game</h3>
+			<p id="gameInfo"></p>
+			<button id="gameAction">Sure! I've got nothing better to do.</button>
+		</div>
+		
+		<script>
+		//Initialize the document
+		document.getElementById("intro").innerHTML = "This page will show different behaviors using JavaScript. By the way, this message was written in a script.";
+		document.write("<p id='javaPara'>This entire paragraph block was added using javascript</p>");
+
+		//Initialize game
+		var mage = new Object();
+		mage.name = "Sylvanti";
+		mage.age = 274;
+		mage.quest = "Slay the Dragon";
+		mage.spells = ["Fire", "Ice", "Lightning", "Wind", "Earth"];
+		mage.introduce = function() { return "Greetings traveler! I am the mage known as " + this.name + ", and in my " + this.age + " years in this land I have partaken in the making of countless legends! Currently, I seek to " + this.quest +". Will you join me?"; };
+		
+		var gameInfo = document.getElementById("gameInfo");
+		gameInfo.innerHTML = mage.introduce();
+		
+		var gameAction = document.getElementById("gameAction"); 
+		gameAction.onclick = updateGame;
+		
+		var state = "start"
+		
+		function getRandomSpell()
+		{
+			return mage.spells[Math.floor(Math.random() * mage.spells.length)];
+		}
+		
+		function updateGame()
+		{
+			if (state=="start")
+			{
+				gameInfo.innerHTML = "You and Sylvanti set out on your quest. Your first stop: the nearby town of Affendor. Here you plan to stock up on supplies, as you head toward the Mountain of the Northern Wind, where the dragon awaits.";
+				gameAction.innerHTML = "Onward to Affendor!";
+				state = "toAffen";
+			}
+			else if (state=="toAffen")
+			{
+				gameInfo.innerHTML = "Walking along the sceneic forest path to Affendor, you begin to notice a rustling in the bushes ahead. You turn to look, and then suddenly are struck from behind!";
+				gameAction.innerHTML = "Fight back!";
+				state = "firstFight";
+			}
+			else if (state=="firstFight")
+			{
+				gameInfo.innerHTML = "You take a swing at the perpetrator: a theif of the forest clan. He easily dodges, and you fall flat to the ground. Best to not overestimate yourself...";
+				gameAction.innerHTML = "...alrigt " + mage.name + ", your turn";
+				state = "mageFight";
+			}
+			else if (state=="mageFight")
+			{
+				gameInfo.innerHTML = mage.name + " calmly faces your opponent, and with the power of his " + getRandomSpell() + " magic! The spell strikes down the your foe.";
+				gameAction.innerHTML = "Nice shot " + mage.name + "! Onward we go!"
+				state = "fightEnd";
+			}
+		}
+		
+		</script>
+	</body>
+</html>

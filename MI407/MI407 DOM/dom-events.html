@@ -1,0 +1,38 @@
+<doctype html>
+<html>
+	<head>
+	<title>Document Object Model</title>
+	</head>
+	<body>
+		<h1 widht=100>DOM</h1>
+		<div id="content">
+			<p>Now, let us begin exploring the Document Object Model for HTML!</p>
+		</div>
+		<img id="card" src="card-back.jpg" height="400px">
+		
+	<script>
+	document.getElementsByTagName("h1")[0].onmouseover = function() { alert("Ouch! Don't poke me!"); };
+	
+	var card = document.getElementById("card");
+	card.onclick = function()
+	{
+		if (card.src.match("card-back.jpg"))
+		{
+			card.src = "card-front.gif";
+		}
+		else
+		{
+			card.src = "card-back.jpg";
+		}
+		
+		var textNode = document.createTextNode("You flipped the card!");	
+		var breakNode = document.createElement("br");
+		document.getElementsByTagName("div")[0].appendChild(textNode);
+		document.getElementsByTagName("div")[0].appendChild(breakNode);
+		
+		var rand = Math.floor(Math.random()*255 + 1); 
+		document.getElementById("content").style.color = "rgb(" + rand + ", " + rand + ", " + rand + ")";
+	}
+	</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+# This is a lightly modified version of the Makefile example from
+# avr-libc documentation:
+# http://www.nongnu.org/avr-libc/examples/demo/Makefile
+# Nathan Sprague, 2011
+# (Added "program" target for programming arduino with avrdude.)
+
+PRG            = bki2pcm
+OBJ            = x86_main.o io_utils.o kidi.o synth.o
+
+DEFS           = 
+LIBS           = -lm
+
+CC             = gcc
+
+
+
+all: $(OBJ)
+	$(CC) $(OBJ)  $(DEFS) $(LIBS)    -o $(PRG)
+
+.c.o:
+	gcc $(DEFS)  $(CFLAGS) -c $<
+
+clean:
+	rm -rf *.o *~
+
+synth.o: synth.h
+time.o: time.h
+serial.o: serial.h
+kidi.o: kidi.h
+io_utils.o: io_utils.h

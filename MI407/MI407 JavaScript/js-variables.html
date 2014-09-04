@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript</title>
+	</head>
+	<body>
+		<div id="intro"></div>
+		
+		<div id="calculator">
+			<h3>Calculator</h3>
+			Number 1: <input type="text" id="num1"></input><br>
+			Number 2: <input type="text" id="num2"></input><br>
+			Output: <span id="numOutput"></span><br>
+			<button id="calc">Calculate</button>
+		</div>
+		
+		<button id="clear">Clear</button>
+		
+		<script>
+		//Initialize the document
+		document.getElementById("intro").innerHTML = "This page will show different behaviors using JavaScript. By the way, this message was written in a script.";
+		document.write("<p id='javaPara'>This entire paragraph block was added using javascript</p>");
+		
+		document.getElementById("clear").onclick = clear;
+		document.getElementById("calc").onclick = add;
+		
+		//Clear the document
+		function clear()
+		{
+			document.write("Information has been cleared!");
+		}
+		function add()
+		{
+			var num1 = parseInt(document.getElementById("num1").value);
+			var num2 = parseInt(document.getElementById("num2").value);
+			document.getElementById("numOutput").innerHTML = num1 + num2;
+		}
+		</script>
+	</body>
+</html>

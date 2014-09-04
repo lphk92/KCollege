@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<body>
+
+<h1>HTML5 Local Storage</h1>
+
+<label>Username</label>
+<input type="text" id="username" name="username">
+<br/> <br/>
+<button id="save">Save Data</button>
+
+<script>
+function save()
+{
+	var username = document.getElementById("username").value;
+	var date = new Date();
+	var time = date.getHours() + ":" + date.getMinutes();
+	
+	var oldUsername = localStorage["username"];
+	var oldTime = localStorage["time"];
+	
+	if(!oldUsername)
+	{
+		alert("This is your first time saving data!")
+	}
+	else
+	{
+		alert("Last time data was saved by " + oldUsername + ", at around " + oldTime + "\nAnyway, I'll save your data now!");		
+	}
+	
+	localStorage["username"] = username;
+	localStorage["time"] = time;
+}
+
+document.getElementById("save").onclick = save;
+</script>
+
+</body>
+</html>

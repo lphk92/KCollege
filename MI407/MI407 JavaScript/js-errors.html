@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript</title>
+		<style>
+		div
+		{
+			padding: 0px 0px 10px 10px;
+			margin: 5px;
+			border: 2px solid black;
+			border-radius: 1px;
+			word-wrap: break-word;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="intro"></div>
+		
+		<div id="numberCheck">
+			<h3>Number Check</h3>
+			<p>Please enter a number</p>
+			<input id="number">
+			<button id="numberCheck">Check It</button>
+		</div>
+		
+		<script>
+		//Initialize the document
+		document.getElementById("intro").innerHTML = "This page will show different behaviors using JavaScript. By the way, this message was written in a script.";
+		document.write("<p id='javaPara'>This entire paragraph block was added using javascript</p>");
+		
+		document.getElementById("numberCheck").onclick = check;
+		
+		function check()
+		{
+			var val = document.getElementById("number").value;
+			try
+			{
+				var num = parseInt(val);
+				if (isNaN(num)) throw "Not a number";
+				alert("You entered the number: " + num.toString());
+			}
+			catch (err)
+			{
+				alert("What gives!?!?! \"" + val + "\" is definitely NOT a number!");
+			}
+		}
+				
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+	<title>Registration</title>
+	<meta name="author" value="Lucas Kushner">
+	<link rel="stylesheet" href="main.css">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="main.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function()
+	{
+		greetUser();
+		initColor();
+	});
+	
+	function greetUser()
+	{
+		if (localStorage["username"])
+		{
+			alert("Welcome back, " + localStorage["username"] + "!" +
+				  "It's great to see you again! We have your name down as \"" +
+				  localStorage["lastName"] + ", " + localStorage["firstName"] + "\".\n\n" + 
+				  "If any of your information has changed, please resubmit your new information using the form.");
+
+			$("#firstName").val(localStorage["firstName"]);
+			$("#lastName").val(localStorage["lastName"]);
+			$("#username").val(localStorage["username"]);
+			$("#password").val(localStorage["password"]);
+		}
+	}
+	
+	function processSubmit()
+	{
+		if ($("#firstName").val() && $("#lastName").val() &&
+			$("#username").val() && $("#password").val() &&
+			$("#password").val() == $("#confirmPassword").val())
+		{
+			localStorage["firstName"] = $("#firstName").val();
+			localStorage["lastName"] = $("#lastName").val();
+			localStorage["username"] = $("#username").val();			
+			localStorage["password"] = $("#password").val();
+		
+			alert("Account data saved!");
+		}
+		else
+		{
+			alert("Please fill out all fields before submitting.");
+		}
+	}
+	</script>
+	</head>
+	
+	<body>
+	
+	<div class="center-wrap">
+	<div id="header">
+		<h1>Index of work for &quot;Programming for the Web&quot;</h1>
+	</div>
+	<div id="navbar">
+	<ul>
+		<li><a href="site-index.html">Home</a></li>
+		<li><a href="site-assignments.html">Assignments</a></li>
+		<li class="selected"><a href="site-registration.html">Register</a></li>
+	</ul>
+	</div>
+	<div id="content">
+		<h2>Registration</h2>
+		<p>
+		Register below to receive updates from the website as new updates are made. Note that currently, no actual update functionality is supported.
+		</p>
+		
+		<form id="registration" onsubmit="processSubmit()">
+		<label>First Name</label><input type="text" name="firstName" id="firstName">
+		<label>Last Name</label><input type="text" name="lastName" id="lastName">
+		<br/><br/>
+		<label>Username</label><input type="text" name="username" id="username">
+		<label>Password</label><input type="password" name="password" id="password">
+		<label>Confirm Password</label><input type="password" name="confirmPassword" id="confirmPassword">
+		<br/>
+		<input type="submit" name="submit">
+		</form>
+	</div>
+	<div id="canvas-wrap">
+		<canvas id="canvas" width="800px" height="400px">
+		<script src="particles/particles.js"></script>
+	</div>
+	</div>
+	
+	</body>
+</html>

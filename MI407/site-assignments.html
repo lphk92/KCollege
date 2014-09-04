@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+	<head>
+	<title>Assignments</title>
+	<meta name="author" value="Lucas Kushner">
+	<link rel="stylesheet" href="main.css">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="main.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function()
+	{
+		$("div.table-section table").each(function() {
+			$(this).hide();
+		});
+		$("div.table-section h2").click(function() {
+			$(this).parent().children("table").each(function() {
+				$(this).fadeToggle("slow", "swing");
+			});
+		});
+
+        initColor();
+	});
+	</script>
+	<style>
+	div.table-section
+	{
+		clear: both;
+		width: 100%;
+	}
+	div.table-section table
+	{
+		width: 100%;
+	}
+	</style>
+	</head>
+	
+	<body>
+	
+	<div class="center-wrap">
+	<div id="header">
+		<h1>Index of work for &quot;Programming for the Web&quot;</h1>
+	</div>
+	<div id="navbar">
+	<ul>
+		<li><a href="site-index.html">Home</a></li>
+		<li class="selected"><a href="site-assignments.html">Assignments</a></li>
+		<li><a href="site-registration.html">Register</a></li>
+	</ul>
+	</div>
+	<div id="content">
+		<h2>Assignments</h2>
+		
+		<div id="html" class="table-section">
+		<h2>HTML</h2>
+		<table>
+			<tr><td><a href="MI407%20HTML/html-home.html">Home</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-introduction.html">Introduction</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-editors.html">Editors</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-basic.html">Basic</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-elements.html">Elements</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-attributes.html">Attributes</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-headings.html">Headings</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-paragraphs.html">Paragraphs</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-formatting.html">Formatting</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-links.html">Links</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-head.html">Head</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-css.html">CSS</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-image.html">Images</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-tables.html">Tables</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-lists.html">Lists</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-blocks.html">Blocks</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-layouts.html">Layout</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-forms.html">Forms</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-iframes.html">Iframes</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-colors.html">Colors</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-colorsnames.html">Color Names</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-colorsvalues.html">Color Values</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-javascript.html">Javascript</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html-entities.html">Entities</a></td></tr>
+		</table>
+		</div>
+		
+		<div id="html5" class="table-section">
+		<h2>HTML5</h2>
+		<table>
+			<tr><td><a href="MI407%20HTML/html5-canvas.html">Canvas</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html5-svg.html">SVG</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html5-dragdrop.html">Drag and Drop</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html5-geolocation.html">Geolocation</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html5-video.html">Video</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html5-audio.html">Audio</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html5-input.html">Input</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html5-form.html">Form</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html5-localstorage.html">Local Storage</a></td></tr>
+			<tr><td><a href="MI407%20HTML/html5-webworker.html">Web Worker</a></td></tr>
+		</table>
+		</div>
+		
+		<div id="htmldom" class="table-section">
+		<h2>HTML DOM</h2>
+		<table>
+			<tr><td><a href="MI407%20DOM/dom-home.html">Home</a></td></tr>
+			<tr><td><a href="MI407%20DOM/dom-intro.html">Intro</a></td></tr>
+			<tr><td><a href="MI407%20DOM/dom-nodes.html">Nodes</a></td></tr>
+			<tr><td><a href="MI407%20DOM/dom-methods.html">Methods</a></td></tr>
+			<tr><td><a href="MI407%20DOM/dom-properties.html">Properties</a></td></tr>
+			<tr><td><a href="MI407%20DOM/dom-access.html">Access</a></td></tr>
+			<tr><td><a href="MI407%20DOM/dom-modify.html">Modify</a></td></tr>
+			<tr><td><a href="MI407%20DOM/dom-content.html">Content</a></td></tr>
+			<tr><td><a href="MI407%20DOM/dom-elements.html">Elements</a></td></tr>
+			<tr><td><a href="MI407%20DOM/dom-events.html">Events</a></td></tr>
+			<tr><td><a href="MI407%20DOM/dom-navigation.html">Navigation</a></td></tr>
+		</table>
+		</div>
+		
+		<div id="css" class="table-section">
+		<h2>CSS</h2>
+		<table>
+			<tr><td><a href="MI407%20CSS/css-syntax.html">Syntax</a></td></tr>
+			<tr><td><a href="MI407%20CSS/css-idclass.html">Id &amp; Class</a></td></tr>
+			<tr><td><a href="MI407%20CSS/css-backgrounds.html">Backgrounds</a></td></tr>
+			<tr><td><a href="MI407%20CSS/css-text.html">Text</a></td></tr>
+			<tr><td><a href="MI407%20CSS/css-fonts.html">Fonts</a></td></tr>
+			<tr><td><a href="MI407%20CSS/css-links.html">Links</a></td></tr>
+			<tr><td><a href="MI407%20CSS/css-lists.html">Lists</a></td></tr>
+			<tr><td><a href="MI407%20CSS/css-tables.html">Tables</a></td></tr>
+			<tr><td><a href="MI407%20CSS/css-border.html">Border</a></td></tr>
+			<tr><td><a href="MI407%20CSS/css-outline.html">Outline</a></td></tr>
+			<tr><td><a href="MI407%20CSS/css-margin.html">Margin</a></td></tr>
+			<tr><td><a href="MI407%20CSS/css-padding.html">Padding</a></td></tr>
+		</table>
+		</div>
+		
+		<div id="javascript" class="table-section">
+		<h2>Javascript</h2>
+		<table>
+			<tr><td><a href="MI407%20JavaScript/js-home.html">Home</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-introduction.html">Introduction</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-howto.html">How To</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-output.html">Output</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-statements.html">Statements</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-comments.html">Comments</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-variables.html">Variables</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-dataTypes.html">Data Types</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-objects.html">Objects</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-functions.html">Functions</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-operators.html">Operators</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-comparisons.html">Comparisons</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-conditions.html">Conditions</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-switch.html">Switch</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-for.html">For</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-while.html">While</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-break.html">Break</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-errors.html">Errors</a></td></tr>
+			<tr><td><a href="MI407%20JavaScript/js-validation.html">Validation</a></td></tr>
+		</table>
+		</div>		
+	</div>
+	<div id="canvas-wrap">
+		<canvas id="canvas" width="800px" height="400px">
+		<script src="particles/particles.js"></script>
+	</div>
+	</div>
+	
+	</body>
+</html>

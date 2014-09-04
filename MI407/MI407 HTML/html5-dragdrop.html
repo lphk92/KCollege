@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<style>
+p
+{
+	text-align: center;
+	font-size: 18px;
+}
+
+div#draggy
+{
+	top: 15px;
+	left: 15px;
+	position: relative;
+	width: 70px;
+	height: 70px;
+	background-color: orange;
+	z-index: 5;
+}
+
+div#box1, div#box2, div#box3, div#box4
+{
+	margin: 10px;
+	width: 100px;
+	height: 100px;
+	border: 1px dotted black;
+	
+	display: block;
+	z-index: 1;
+}
+</style>
+<body>
+
+<h1>HTML5 Drag and Drop</h1>
+
+<script>
+function allowDrop(ev)
+{
+	ev.preventDefault();
+}
+
+function drag(ev)
+{
+	ev.dataTransfer.setData("Text", ev.target.id)
+}
+
+function drop(ev)
+{
+	ev.preventDefault();
+	var data = ev.dataTransfer.getData("Text");
+	ev.target.appendChild(document.getElementById(data));
+}
+</script>
+
+<div id="box1" ondrop="drop(event)" ondragover="allowDrop(event)"><div id="draggy" draggable="true" ondragstart="drag(event)"></div></div>
+<div id="box2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="box3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="box4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+
+
+</body>
+</html>

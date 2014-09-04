@@ -1,0 +1,28 @@
+<doctype html>
+<html>
+	<head>
+	<title>Document Object Model</title>
+	</head>
+	<body>
+		<h1>DOM</h1>
+		<div id="content">
+			<p>Now, let us begin exploring the Document Object Model for HTML!</p>
+		</div>
+		<img id="card" src="card-back.jpg" height="400px">
+		
+	<script>
+	var card = document.getElementById("card");
+	card.onclick = function()
+	{
+		if (card.src.match("card-back.jpg"))
+		{
+			card.src = "card-front.gif";
+		}
+		else
+		{
+			card.src = "card-back.jpg";
+		}
+	}
+	</script>
+	</body>
+</html>
