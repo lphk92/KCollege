@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">KShare</string>
+    <string name="action_settings">Settings</string>
+    
+    <!-- Titles for every activity -->
+    <string name="title_activity_ride_feed">RideFeed</string>
+    <string name="title_activity_new_account">New Account</string>
+    <string name="title_activity_my_posts">My Posts</string>
+    <string name="title_activity_post_info">Post Info</string>
+    <string name="title_activity_edit_post">EditPostActivity</string>
+    
+    <!-- login activity and new account Activity -->
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="new_account">New Account</string>
+    <string name="email">Email Address</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="add_account">Register</string>
+    
+    <!-- here for testing only! -->
+    <string name="clear_all_posts">Clear all Posts!</string>
+    <string name="clear_all_users">Clear all Users!</string>
+    <string name="skip_login">Skip Login</string>
+
+    <!-- RideFeedActivity -->
+    <string name="infoTitle">Post Information</string>
+    <string name="infoOk">Okay</string>
+    <string name="infoCancel">Cancel</string>
+    <string name="myPosts">My Posts</string>
+    <string name="newPost">New Post</string>
+   
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_date">DateActivity</string>
+    
+    <!-- EditPostActivity -->
+    <string name="seats_available_hint">#</string>
+    <string name="seats_available">Available seats:</string>
+	<string name="meeting_location_hint">Meeting Location</string>
+	<string name="destination_hint">Destination</string>
+	
+	<string name="button_upload">Upload</string>
+	<string name="button_date">Set Date</string>
+	<string name="button_post">Post</string>
+	<string name="button_update">Update</string>
+	<string name="button_back">Back</string>
+	
+	<!-- DateActivity -->
+	<string name="pick_date">Pick a date</string>
+	<string name="time_text">Select a time:</string>
+
+</resources>

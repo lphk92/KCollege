@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DiningPhilsophers</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_statistics">Statistics</string>
+    <string name="edit_numbers">At least 5 Philosophers</string>
+    <string name="edit_strategy">Choose a strategy</string>    
+    <string name="button_send">Send</string>
+    <string name="replay">Replay</string>
+    
+    <string-array name="strategy_content">
+        <item>First strategy</item>
+        <item>Second strategy</item>
+        <item>Third strategy</item>
+        <item>Fourth strategy</item>
+        <item>Fifth strategy</item>
+        <item>Sixth strategy</item>
+    </string-array>
+
+</resources>

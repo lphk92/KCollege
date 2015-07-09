@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".SettingsActivity" >
+
+    <EditText android:id="@+id/edit_numbers_id"
+        android:inputType="number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_numbers" />
+    
+    <Spinner android:id="@+id/edit_strategy_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/strategy_content"
+        android:prompt="@string/edit_strategy" />
+            
+    <Button android:id="@+id/button_send_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/button_send"
+        android:onClick="sendMessage" />
+
+</LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WaitAssist</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="enterPatrons">Enter Patron</string>
+    <string name="view">View List</string>
+    <string name="store">Save List</string>
+    <string name="load">Load List</string>
+    <string name="exit">Exit</string>
+    <string name="storeName">List Name</string>
+    <string name="loadName">List Name</string>
+    
+    
+    <string name="title_activity_enter_patron">Enter Patron</string>    
+    <string name="tableIdHint">Table ID</string>
+    <string name="seatIdHint">Seat ID</string>
+    <string name="submitPatron">Add Patron</string>
+    
+    <string-array name="menu_array">
+        <item>Salt and Pepper Fried Whitefish</item>
+        <item>Fetuccini Alfredo</item>
+        <item>Steak au Poivre</item>
+        <item>Steamed Eggplant with Market Vegetables</item>
+        <item>Lemon and Blueberry Tart</item>
+    </string-array>
+
+</resources>

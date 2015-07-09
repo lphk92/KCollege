@@ -1,0 +1,120 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/latLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/latLabel" />
+
+    <TextView
+        android:id="@+id/latitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/latLabel"
+		android:layout_toRightOf="@+id/latLabel"
+		android:layout_marginLeft="30dp" />
+
+    <TextView
+        android:id="@+id/longLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/latLabel"
+        android:layout_below="@+id/latLabel"
+        android:layout_marginTop="10dp"
+        android:text="@string/longLabel" />
+
+    <TextView
+        android:id="@+id/longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/longLabel"
+        android:layout_alignLeft="@+id/latitude" />
+    
+    <TextView
+        android:id="@+id/addrLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/latLabel"
+        android:layout_below="@+id/longLabel"
+        android:layout_marginTop="10dp"
+        android:text="@string/addrLabel" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/addrLabel"
+        android:layout_alignLeft="@+id/latitude" 
+        android:lines="2"/>
+    
+    <Button
+        android:id="@+id/save"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/address"
+        android:layout_marginTop="20dp"
+        android:text="@string/save"
+        android:onClick="save" />
+    
+    <Button
+        android:id="@+id/refresh"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/save"
+        android:layout_marginTop="5dp"
+        android:text="@string/refresh"
+        android:onClick="refresh" />
+    
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/refresh"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/clear"
+        android:onClick="clear" />
+    
+    <Button
+        android:id="@+id/viewMap"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/clear"
+        android:layout_marginTop="5dp"
+        android:text="@string/viewMap"
+        android:onClick="viewMap" />
+    
+    <TextView
+        android:id="@+id/isSaved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/viewMap"
+        android:layout_below="@+id/viewMap"
+        android:layout_marginTop="10dp" />
+    
+    <TextView
+        android:id="@+id/savedLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/isSaved"
+        android:layout_alignLeft="@+id/isSaved"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:lines="3" />
+
+</RelativeLayout>

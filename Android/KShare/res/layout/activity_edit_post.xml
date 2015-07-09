@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".EditPostActivity" >
+
+    <EditText
+        android:id="@+id/destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="@string/destination_hint"
+        android:inputType="text" />
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text_seats_available"
+        android:layout_below="@+id/seats_available"/>
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/timePicker"
+        android:layout_below="@+id/timePicker"
+        android:calendarViewShown="false" />
+
+    <EditText
+        android:id="@+id/meeting_location"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/destination"
+        android:layout_below="@+id/button_upload"
+        android:ems="10"
+        android:hint="@string/meeting_location_hint"
+        android:inputType="text" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/button_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/destination"
+        android:layout_alignRight="@+id/meeting_location"
+        android:layout_alignTop="@+id/destination"
+        android:onClick="upload"
+        android:text="@string/button_upload" />
+
+    <EditText
+        android:id="@+id/seats_available"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/text_seats_available"
+        android:layout_toRightOf="@+id/text_seats_available"
+        android:ems="10"
+        android:hint="@string/seats_available_hint"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/text_seats_available"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/meeting_location"
+        android:layout_below="@+id/meeting_location"
+        android:layout_marginTop="16dp"
+        android:text="@string/seats_available" />
+
+</RelativeLayout>

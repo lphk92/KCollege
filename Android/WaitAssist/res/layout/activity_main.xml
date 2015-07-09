@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/enterPatrons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/enterPatrons"
+        android:onClick="enterPatron">
+        
+        <requestFocus />
+     </Button>
+
+    <Button
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/enterPatrons"
+        android:layout_alignBottom="@+id/enterPatrons"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/enterPatrons"
+        android:text="@string/view" 
+        android:onClick="viewList" />
+    
+    <Button
+        android:id="@+id/store"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/enterPatrons"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/enterPatrons"
+        android:text="@string/store" 
+        android:onClick="store" />
+    
+     <Button
+        android:id="@+id/load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/store"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/store"
+        android:text="@string/load" 
+        android:onClick="load"/>
+     
+      <Button
+        android:id="@+id/exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/load"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/load"
+        android:text="@string/exit"
+        android:onClick="exit" />
+
+      <TextView
+          android:id="@+id/patronInfo"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignLeft="@+id/exit"
+          android:layout_below="@+id/exit"
+          android:layout_marginTop="20dp"
+          android:text="" />
+
+      <EditText
+          android:id="@+id/storeName"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignBaseline="@+id/store"
+          android:layout_alignBottom="@+id/store"
+          android:layout_marginLeft="17dp"
+          android:layout_toRightOf="@+id/store"
+          android:hint="@string/storeName" />
+
+      <EditText
+          android:id="@+id/loadName"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignBaseline="@+id/load"
+          android:layout_alignBottom="@+id/load"
+          android:layout_alignLeft="@+id/storeName"
+          android:hint="@string/loadName" />
+
+</RelativeLayout>

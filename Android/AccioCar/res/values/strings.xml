@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Accio Car!</string>
+    <string name="action_settings">Settings</string>
+    <string name="latLabel">Latitude</string>
+    <string name="longLabel">Longitude</string>
+    <string name="addrLabel">Address</string>
+    <string name="save">Save Current Location</string>
+    <string name="refresh">Refresh</string>
+    <string name="load">Load Saved Location</string>
+    <string name="clear">Clear Saved Location</string>
+    <string name="viewMap">View Map to Location</string>
+    <string name="isSaved">Saved Location on record</string>
+    <string name="title_activity_map">MapActivity</string>
+
+</resources>

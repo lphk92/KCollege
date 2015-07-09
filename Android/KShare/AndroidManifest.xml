@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dkl.kshare"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="dkl.kshare.LoginActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="dkl.kshare.RideFeedActivity"
+            android:label="@string/title_activity_ride_feed" >
+        </activity>
+        <activity
+            android:name="dkl.kshare.NewAccountActivity"
+            android:label="@string/title_activity_new_account" >
+        </activity>
+        <activity
+            android:name="dkl.kshare.MyPostsActivity"
+            android:label="@string/title_activity_my_posts" >
+        </activity>
+        <activity
+            android:name="dkl.kshare.PostInfoActivity"
+            android:label="@string/title_activity_post_info" >
+        </activity>
+        <activity
+            android:name="dkl.kshare.EditPostActivity"
+            android:label="@string/title_activity_edit_post" 
+            android:parentActivityName="dkl.kshare.MyPostsActivity" >
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="dkl.kshare.MyPostsActivity" />
+        </activity>
+        <activity
+            android:name="dkl.kshare.DateActivity"
+            android:label="@string/title_activity_date" >
+        </activity>
+    </application>
+
+</manifest>
